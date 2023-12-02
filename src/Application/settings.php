@@ -17,14 +17,10 @@ return function (ContainerBuilder $containerBuilder) {
             ],
             'db' => [
                 'driver' => 'mysql',
-                //'host' => '127.0.0.1',
-                //'username' => 'root',
-                //'password' => 'root',
-                //'database' => 'id21337904_smoswip_db',
-                'host' => 'srv1048.hstgr.io',
-                'username' => 'u640077936_admin',
-                'password' => 'LuLKI>90m|R',
-                'database' => 'u640077936_smoswip',
+                'host' => $_ENV['DB_HOST'],
+                'username' => $_ENV['DB_NAME'],
+                'password' => $_ENV['DB_USER'],
+                'database' => $_ENV['DB_PWD'],                
                 'charset' => 'utf8mb4',
                 'collation' => 'utf8mb4_unicode_ci',
                 'flags' => [
