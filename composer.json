@@ -1,4 +1,7 @@
 {
+    "name": "cmudadu/smoswip",
+    "description": "Sistema MOnitoraggio Sensori Web In PHP",
+    "license": "MIT",
     "require": {
         "slim/slim": "4.*",
         "slim/psr7": "^1.5",
