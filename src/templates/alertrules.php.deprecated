@@ -1,0 +1,81 @@
+<!-- Page Heading -->
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">Alert rules</h1>
+    <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" data-toggle="modal" data-target="#addAlertRuleModal">
+        <i class="fas fa-plus fa-sm text-white-50"></i> Add Alert Rule
+    </a>
+</div>
+
+<div id="list-alertrules" class="row">
+
+</div>
+
+
+<div class="modal fade" id="addAlertRuleModal" tabindex="-1" aria-labelledby="addAlertRuleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="addAlertRuleModalLabel">Add new alert rule</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="name" class="col-form-label">Name *:</label>
+            <input type="text" class="form-control" id="name" required>
+          </div>
+          <div class="form-group">
+              <label for="sensor_id" class="col-form-label">Sensor *:</label>
+              <select class="form-control" id="sensor_id">
+              </select>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-4">
+              <label for="field_name">Field name *</label>
+              <select class="form-control" id="field_name">
+                  <option value="m1">M1</option>
+                  <option value="m2">M2</option>
+                  <option value="m3">M3</option>
+              </select>
+            </div>
+            <div class="form-group col-md-4">
+              <label for="field_operator">Field operator *</label>
+              <select class="form-control" id="field_operator">
+                  <option value="1"><</option>
+                  <option value="2"><=</option>
+                  <option value="3">=</option>
+                  <option value="4">>=</option>
+                  <option value="5">></option>
+              </select>
+            </div>
+            <div class="form-group col-md-4">
+              <label for="field_theshold">Field theshold *</label>
+              <input type="number" class="form-control" id="field_theshold" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-4">
+              <label for="field_name">Recipient type *</label>
+              <select class="form-control" id="recipient_type">
+                  <option value="email">Email</option>
+                  <option value="telegram">Telegram</option>
+              </select>
+            </div>
+            <div class="form-group col-md-8">
+              <label for="recipient">Recipient *</label>
+              <input type="text" class="form-control" id="recipient" required placeholder="email or telegram channel">
+              
+            </div>
+            <div class="col"><span class="small">for telegram insert BOT_API_TOKEN;CHAT_ID  example 1234:AAA_WW;-1233</span></div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" id="btn-save-alertrule">Save</button>
+      </div>
+    </div>
+  </div>
+</div>

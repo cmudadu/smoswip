@@ -1,0 +1,110 @@
+<!-- Page Heading -->
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800"><?php echo $alertrule["name"] ?></h1>    
+    <div class="justify-content-end">
+        <button class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"
+            data-alertrule-id="<?php echo $alertrule["id"] ?>" data-toggle="modal" data-target="#addRecipientModal">
+            <i class="fas fa-paper-plane fa-sm text-white-50"></i> Add recipient
+        </button>
+        <button class="d-none d-sm-inline-block btn btn-sm btn-danger shadow-sm" id="btn-delete-alertrule"
+            data-alertrule-id="<?php echo $alertrule["id"] ?>" >
+            <i class="fas fa-trash fa-sm text-white-50"></i> Delete alert rule
+        </button>
+    </div>
+</div>
+
+<div id="alertrule-detail" class="row" data-alertrule-id="<?php echo $alertrule["id"] ?>">
+    <div class="col-md-4">
+        <div class="card" >
+            <div class="card-body">
+                <p class="card-text"><?php echo $alertrule["name"] ?></p>
+                <dl class="row">
+                    <dt class="col-sm-4">Sensor</dt>
+                    <dd class="col-sm-8"><?php echo $alertrule["sensor_name"] ?></dd>
+                    
+                    <dt class="col-sm-4">Rule</dt>
+                    <dd class="col-sm-8">
+                        <?php echo $alertrule["field_name"] ?>
+                        <?php switch($alertrule["field_operator"]){
+                            case 1: echo "<";break;
+                            case 2: echo "<=";break;
+                            case 3: echo "=";break;
+                            case 4: echo ">=";break;
+                            case 5: echo ">";break;
+                        } ?>
+                        <?php echo $alertrule["field_threshold"] ?>
+                    </dd>
+
+                </dl>
+
+                
+                
+            </div>
+        </div>
+
+      
+    </div>
+    <div class="col-md-8">
+        <div class="row">
+                      
+            <div class="card shadow mb-4" style="width:100%">
+                <!-- Card Header - Dropdown -->
+                <div
+                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                    <h6 class="m-0 font-weight-bold text-primary" >Recipients</h6>
+                    
+                </div>
+                <!-- Card Body -->
+                <div class="card-body"> 
+                    <table id="list-recipients" class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Recipient type</th>
+                                <th>Recipient</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+           
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="addRecipientModal" tabindex="-1" aria-labelledby="addRecipientModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addRecipientModalLabel">Add recipient</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                    
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                    <label for="field_name">Recipient type *</label>
+                    <select class="form-control" id="recipient_type">
+                        <option value="email">Email</option>
+                        <option value="telegram">Telegram</option>
+                    </select>
+                    </div>
+                    <div class="form-group col-md-8">
+                    <label for="recipient">Recipient *</label>
+                    <input type="text" class="form-control" id="recipient" required placeholder="email or telegram channel">
+                    </div>
+                </div>
+                <div class="col"><span class="small">for telegram insert BOT_API_TOKEN;CHAT_ID  example 1234:AAA_WW;-1233</span></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="btn-add-recipient">Add</button>
+            </div>
+        </div>
+    </div>
+</div>

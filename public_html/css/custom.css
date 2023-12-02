@@ -1,0 +1,74 @@
+.section-tab {
+    padding-top: 10%;
+    margin-top: -8%;
+}
+.section-tab #tabs{
+    background: #007b5e;
+    color: #eee;
+}
+.section-tab #tabs h6.section-title{
+    color: #eee;
+}
+.section-tab #tabs .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+    color: #0062cc;
+    background-color: transparent;
+    border-color: transparent transparent #f3f3f3;
+    border-bottom: 3px solid !important;
+    font-size: 16px;
+    font-weight: bold;
+}
+.section-tab .nav-link {
+    border: 1px solid transparent;
+    border-top-left-radius: .25rem;
+    border-top-right-radius: .25rem;
+    color: #0062cc;
+    font-size: 16px;
+    font-weight: 600;
+}
+#nav-tabContent{
+    background-color: #fff;
+}
+.section-tab .nav-link:hover {
+    border: none;
+}
+
+.section-tab a{
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+}
+
+/* CSS per Modal a schermo intero */
+.modal-fullscreen {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1050;
+    display: none;
+    overflow: hidden;
+    outline: 0;
+}
+
+.modal-fullscreen .modal-dialog {
+    margin: 0;
+    max-width: none;
+    width: 100%;
+}
+
+.modal-fullscreen .modal-content {
+    height: 100vh;
+    border: 0;
+}
+
+.modal-fullscreen .modal-header,
+.modal-fullscreen .modal-body,
+.modal-fullscreen .modal-footer {
+    padding: 15px;
+}
+/* Stile per il body scrollabile */
+.modal-fullscreen .modal-body {
+    max-height: calc(100vh - 65px); /* 130px è l'altezza approssimativa dell'header e del footer combinati */
+    overflow-y: auto;
+}

@@ -1,0 +1,48 @@
+<!-- Page Heading -->
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">Sites</h1>
+    <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" data-toggle="modal" data-target="#addSiteModal">
+        <i class="fas fa-plus fa-sm text-white-50"></i> Add Site
+    </a>
+</div>
+
+<div id="list-sites" class="row">
+
+</div>
+
+<div class="modal fade" id="addSiteModal" tabindex="-1" aria-labelledby="addSiteModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="addSiteModalLabel">Add new site</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="name" class="col-form-label">Name *:</label>
+            <input type="text" class="form-control" id="name" required>
+          </div>
+          <div class="form-group">
+            <label for="description" class="col-form-label">Description:</label>
+            <textarea class="form-control" id="description"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="lat" class="col-form-label">Latitude:</label>
+            <input type="text" class="form-control" id="lat">
+          </div>
+          <div class="form-group">
+            <label for="lon" class="col-form-label">Longitude:</label>
+            <input type="text" class="form-control" id="lon">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" id="btn-save-site">Save</button>
+      </div>
+    </div>
+  </div>
+</div>
