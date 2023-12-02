@@ -18,9 +18,9 @@ return function (ContainerBuilder $containerBuilder) {
             'db' => [
                 'driver' => 'mysql',
                 'host' => $_ENV['DB_HOST'],
-                'username' => $_ENV['DB_NAME'],
-                'password' => $_ENV['DB_USER'],
-                'database' => $_ENV['DB_PWD'],                
+                'username' => $_ENV['DB_USER'],
+                'password' => $_ENV['DB_PWD'],
+                'database' => $_ENV['DB_NAME'],                
                 'charset' => 'utf8mb4',
                 'collation' => 'utf8mb4_unicode_ci',
                 'flags' => [
